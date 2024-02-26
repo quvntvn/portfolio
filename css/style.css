@@ -1,0 +1,335 @@
+/* style.css */
+body {
+    font-family: 'Terminal', monospace;
+    background-color: #0a0a0a;
+    color: #33ff33;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+header, section, footer {
+    font-family: 'Terminal', monospace;
+    margin: 20px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    font-family: 'Terminal', monospace;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+
+
+}
+
+a {
+    color: #33ff33;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid #33ff33;
+    /*position: fixed;*/
+    bottom: 0;
+    background-color: #000000; 
+    color: #33ff33;
+    font-size: 16px;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #main-content {
+    display: none;
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    border-left: 2px solid #33ff33;
+    animation: blink 1s step-end infinite;
+  }
+
+/* Style des liens */.navbar {
+    background-color: #333; /* Couleur de fond */
+    overflow: hidden;
+    display: flex; /* Utilisez flex pour mieux contrôler le positionnement des liens */
+    justify-content: center; /* Alignez les liens à partir de la gauche */
+    width: 100%; /* Assurez-vous que la barre de navigation couvre toute la largeur */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+.nav-links li {
+    display: flex; /* Assure que les éléments de liste sont aussi en flex */
+}
+
+.nav-links a {
+    display: block; /* Affichage en bloc */
+    color: white; /* Couleur du texte */
+    text-align: center; /* Alignement du texte */
+    padding: 14px 16px; /* Espacement */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 17px; /* Taille du texte */
+}
+
+/* Changement de couleur des liens au survol */
+.nav-links a:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+    color: black; /* Couleur du texte au survol */
+}
+
+/* Style des liens actifs (si nécessaire) */
+.nav-links a.active {
+    background-color: #4CAF50; /* Couleur de fond du lien actif */
+    color: white; /* Couleur du texte du lien actif */
+}
+
+.content-wrapper {
+    max-width: 1200px; /* Largeur maximale pour une lecture confortable */
+    margin: 0 auto; /* Centrage du conteneur */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px; /* Réduit le padding pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 5px; /* Espacement encore plus réduit pour les très petits écrans */
+    }
+    /* Vous pouvez également ajuster d'autres éléments ici */
+    h1, h2 {
+        font-size: smaller; /* Réduit la taille du texte pour les titres */
+    }
+}
+
+.experience-detail {
+    display: none;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Assurez-vous que la section ou le conteneur du titre a une classe spécifique pour ce positionnement */
+.section-title {
+    border-bottom:1px solid #33ff33;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*margin-bottom: 30px;*/
+}
+
+.toggle-detail {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #33ff33; /* Couleur adaptée au thème */
+    /* Autres styles pour le bouton ici si nécessaire */
+}
+
+.experience-detail, .formation-detail {
+    display: none; /* Initial state hidden */
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #1a1a1a; /* Slightly different background */
+    border-left: 3px solid #33ff33; /* Add a styled border to the left */
+    color: #c7c7c7; /* Lighter text color for readability */
+    font-size: 0.95em; /* Slightly smaller font size */
+}
+
+.experience-detail p, .formation-detail p {
+    margin: 10px 0; /* Add some space between paragraphs */
+}
+
+.section-title, .content-section {
+    padding: 10px; /* Ajustez cette valeur selon vos besoins */
+    margin: 20px 0; /* Ajustez cette valeur selon vos besoins */
+}
+
+.download-cv {
+    display: inline-block;
+    background-color: transparent; /* Fond transparent pour s'intégrer au style */
+    color: #33ff33; /* Couleur du texte */
+    border: 2px solid #33ff33; /* Bordure du bouton */
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: 'Terminal', monospace;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-cv:hover {
+    background-color: #33ff33; /* Changement de fond au survol */
+    color: #0a0a0a; /* Changement de couleur du texte au survol */
+}
+
+form#contact-form {
+    margin: 20px 0;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #33ff33;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #33ff33;
+    color: #33ff33;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #66ff66;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profile-photo {
+    text-align: center; /* Centre l'image horizontalement */
+    margin: 20px 0; /* Ajoute de l'espace autour de l'image */
+}
+
+.profile-photo img {
+    width: 300px; /* Ajustez la taille selon vos besoins */
+    height: 300px; /* Assure que l'image est un cercle parfait */
+    border-radius: 50%; /* Rend l'image ronde */
+    border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
+    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+}
+
+/* Style général du jeu et des éléments de formulaire */
+input[type="number"], button {
+    color: #33ff33; /* Texte vert */
+    border: 1px solid #33ff33; /* Bordure verte */
+    padding: 10px; /* Espacement intérieur */
+    font-family: 'Terminal', monospace; /* Police de caractères */
+    margin: 5px 0; /* Espacement extérieur */
+}
+
+input[type="number"]{
+    background-color: #333
+}
+
+button {
+    cursor: pointer; /* Curseur pointeur */
+    background-color: #0a0a0a;
+    transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+button:hover {
+    background-color: #33ff33; /* Fond vert sur hover */
+    color: #0a0a0a; /* Texte noir sur hover */
+}
+
+.cv-download a.download-button {
+    display: inline-block;
+    background-color: transparent;
+    color: #33ff33;
+    border: 2px solid #33ff33;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cv-download a.download-button:hover {
+    background-color: #33ff33;
+    color: #0a0a0a;
+}
+
+#retry-button {
+    display: none; /* Cache le bouton par défaut */
+}
+
+.game-container {
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #33ff33;
+    color: #0a0a0a;
+}
+
+#countdown {
+    font-size: 2em;
+    margin: 20px;
+    animation: none;
+}
+
+.cowboy {
+    font-size: 50px;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.game-container, #duel {
+    height: 250px; 
+}
+

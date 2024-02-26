@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Quentin Bucher</title>
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html?skipLoading=true">CV</a></li>
+            <li><a href="projects.html?skipLoading=true">Projets</a></li>
+            <li><a href="hobbies.html?skipLoading=true">Passer le temps</a></li>
+            <li><a href="contact.html?skipLoading=true">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <header>
+            <h1>Passer le temps</h1>
+        </header>
+        <section>
+            <div class="section-title">
+            <h2>Devinez le nombre entre 1 et 100</h2>
+        </div>
+            <section id="fun-time">
+                <div id="guessing-game">
+                    <input type="number" id="user-guess" min="1" max="100"/>
+                    <button onclick="checkGuess()">Deviner</button>
+                    <button id="retry-button" onclick="retry()">Recommencer</button>
+
+                    <p id="game-result"></p>
+                </div>
+            </section>
+            <div class="section-title">
+            <h2>Duel de cowboy</h2>
+        </div>
+        <div id="level">niveau : 1</div>
+        <div class="game-container">
+            <div id="duel">
+                <span class="cowboy" id="enemi">🤠</span>
+                <br><br>
+                <div id="display">Prêt ?</div>
+                <br>
+                <span class="cowboy" id="me">🤠</span>
+            </div>
+            <center><button id="gachette">tirer</button></center>
+            <center><button id="startDuel">Commencer le duel</button></center>
+        </div>
+        </section>
+        <section id="clicker-game">
+            <div class="section-title">
+                <h2>Jeu d'incrémentation</h2>
+            </div>
+            <div id="moneyDisplay">Solde disponible :<br><br> 0 €</div>
+            <button id="salaire">salaire</button>
+            <button class="upgrade-salaire" id="salaireUpgrade" >Augmenter (Coût : 75000 €)</button>
+            <div id="salairebyClick">1000 € par click</div>
+            
+            <h3>Entreprises</h3>
+            <div id="businesses">
+                <div>
+                    <div id="epiceRevenueDisplay"></div>
+                    <button id="epice">Épicerie (Coût : 100000 €)</button>
+                    <button id="epiceUpgrade" >Améliorer (Coût : 100000 €)</button>
+                </div>
+                <div>
+                    <div id="usineRevenueDisplay"></div>
+                    <button id="usine">Usine de textile (Coût : 10000000 €)</button>
+                    <button id="usineUpgrade" >Améliorer (Coût : 10000000 €)</button>
+                </div>
+                <div>
+                    <div id="centreRevenueDisplay"></div>
+                    <button id="centre">Centre-commercial (Coût : 100000000 €)</button>
+                    <button id="centreUpgrade" >Améliorer (Coût : 100000000 €)</button>
+                </div>
+                <div>
+                    <div id="clubRevenueDisplay"></div>
+                    <button id="club">Club de football (Coût : 1000000000 €)</button>
+                    <button id="clubUpgrade" >Améliorer (Coût : 1000000000 €)</button>
+                </div>
+                <div>
+                    <button id="terre">planète terre (Coût : 1000000000000 €)</button>
+                </div>
+            </div>
+        </section>
+        <script src="js/game.js"></script>
+    </div>
+    <footer>
+        <div class="cv-download">
+            <a href="path/to/CV_QuentinBucher.pdf" download="CV_QuentinBucher" class="download-button">Télécharger mon CV</a>
+        </div>
+        <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
+    </footer>
+</body>
+</html>
