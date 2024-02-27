@@ -262,10 +262,10 @@ function updateDisplay() {
         usineRevenueDisplay.textContent = `Usine : ${revenuUsineParSeconde} par seconde`;
     }
     if(revenuCentreParSeconde > 0){
-        centreRevenueDisplay.textContent = `Centre : ${revenuCentreParSeconde} par seconde`;
+        centreRevenueDisplay.textContent = `Centre-commercial : ${revenuCentreParSeconde} par seconde`;
     }
     if(revenuClubParSeconde > 0){
-        clubRevenueDisplay.textContent = `Club : ${revenuClubParSeconde} par seconde`;
+        clubRevenueDisplay.textContent = `Club de football : ${revenuClubParSeconde} par seconde`;
     }
 }
 
@@ -277,6 +277,7 @@ document.getElementById('usine').addEventListener('click', function() {
         revenuUsineParSeconde = 50000;
         hasUsine = true;
         this.style.display = 'none';
+        const usineRevenueDisplay = document.getElementById('usineRevenueDisplay');
         document.getElementById('usineUpgrade').style.display = 'block';
         updateDisplay(); 
     } else {
@@ -289,7 +290,7 @@ usineUpgradeBtn.addEventListener('click', function() {
         argent -= coutAmeliorationUsine;
         revenuUsineParSeconde *= 2;
         coutAmeliorationUsine *= 2;
-        document.getElementById('epiceUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationUsine + " €)"
+        document.getElementById('usineUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationUsine + " €)"
         updateDisplay();
     } else {
         alert("Vous n'avez pas assez d'argent pour améliorer");
@@ -302,6 +303,7 @@ document.getElementById('centre').addEventListener('click', function() {
         revenuCentreParSeconde = 100000;
         hasCentre = true;
         this.style.display = 'none'; 
+        const centreRevenueDisplay = document.getElementById('centreRevenueDisplay');
         document.getElementById('centreUpgrade').style.display = 'block'; 
         updateDisplay(); 
     } else {
@@ -327,6 +329,7 @@ document.getElementById('club').addEventListener('click', function() {
         revenuClubParSeconde = 500000; 
         hasClub = true;
         this.style.display = 'none';
+        const clubRevenueDisplay = document.getElementById('clubRevenueDisplay');
         document.getElementById('clubUpgrade').style.display = 'block';
         updateDisplay();
     } else {
@@ -346,3 +349,18 @@ clubUpgradeBtn.addEventListener('click', function() {
     }
 });
 
+let hasTerre = false;
+
+document.getElementById('terre').addEventListener('click', function() {
+    if (argent >= 1000000000000) {
+        argent -= 1000000000000;
+        revenuClubParSeconde = 500000; 
+        hasTerre = true;
+        this.style.display = 'none';
+        document.getElementById('victory').style.display = 'block';
+        document.getElementById('victory').textContent = "Vous avez acheté la terre entiere, fin du jeu.";
+        updateDisplay();
+    } else {
+        alert("Pas assez d'argent pour acheter la terre");
+    }
+});
