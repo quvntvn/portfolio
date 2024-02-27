@@ -150,7 +150,6 @@ startDuelBtn.addEventListener('click', newDuel);
 function updateGameAfterAction() {
     if (currentLevel >= maxLevel) {
         display.textContent = "Vous êtes une légende !";
-        resetGame(true);
     } else {
         currentLevel++;
         reactionLimit -= 30;
@@ -207,7 +206,7 @@ document.getElementById('epice').addEventListener('click', function() {
         this.style.display = 'none';
         const epiceRevenueDisplay = document.getElementById('epiceRevenueDisplay');
         document.getElementById('epiceUpgrade').style.display = 'block';
-        epiceRevenueDisplay.textContent = "Épicerie : 10000 par seconde";
+        epiceRevenueDisplay.textContent = "Épicerie : 10 000 € par seconde";
         updateDisplay(); 
     } else {
         alert("Pas assez d'argent pour acheter l'épicerie");
@@ -220,7 +219,7 @@ epiceUpgradeBtn.addEventListener('click', function() {
         argent -= coutAmeliorationEpice;
         revenuEpicerieParSeconde *= 4;
         coutAmeliorationEpice *= 4;
-        document.getElementById('epiceUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationEpice + " €)";
+        document.getElementById('epiceUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationEpice.toLocaleString('fr-FR') + " €)";
         updateDisplay();
     } else {
         alert("Vous n'avez pas assez d'argent pour améliorer");
@@ -246,26 +245,26 @@ document.getElementById('salaireUpgrade').addEventListener('click', () => {
     argent -= coutAmeliorationSalaire;
     revenuParClick *= 2;
     coutAmeliorationSalaire *= 2;
-    document.getElementById('salaireUpgrade').textContent = `Augmenter salaire (Coût : ${coutAmeliorationSalaire} €)`;
+    document.getElementById('salaireUpgrade').textContent = `Augmenter salaire (Coût : ${coutAmeliorationSalaire.toLocaleString('fr-FR')} €)`;
   }
 });
 
 
 function updateDisplay() {
-  document.getElementById('moneyDisplay').textContent = `Solde disponible : ${argent} €`;
-  document.getElementById('salairebyClick').textContent = `${revenuParClick} € par click`;
-  document.getElementById('salaireUpgrade').disabled = argent < coutAmeliorationSalaire;
-  if(revenuEpicerieParSeconde > 0){
-    epiceRevenueDisplay.textContent = `Épicerie : ${revenuEpicerieParSeconde} par seconde`;
+    document.getElementById('moneyDisplay').textContent = `Solde disponible : ${argent.toLocaleString('fr-FR')} €`;
+    document.getElementById('salairebyClick').textContent = `${revenuParClick.toLocaleString('fr-FR')} € par click`;
+    document.getElementById('salaireUpgrade').textContent = `Augmenter salaire (Coût : ${coutAmeliorationSalaire.toLocaleString('fr-FR')} €)`;
+    if(revenuEpicerieParSeconde > 0){
+    epiceRevenueDisplay.textContent = `Épicerie : ${revenuEpicerieParSeconde.toLocaleString('fr-FR')} € par seconde`;
   }
     if(revenuUsineParSeconde > 0){
-        usineRevenueDisplay.textContent = `Usine : ${revenuUsineParSeconde} par seconde`;
+        usineRevenueDisplay.textContent = `Usine : ${revenuUsineParSeconde.toLocaleString('fr-FR')} € par seconde`;
     }
     if(revenuCentreParSeconde > 0){
-        centreRevenueDisplay.textContent = `Centre-commercial : ${revenuCentreParSeconde} par seconde`;
+        centreRevenueDisplay.textContent = `Centre-commercial : ${revenuCentreParSeconde.toLocaleString('fr-FR')} € par seconde`;
     }
     if(revenuClubParSeconde > 0){
-        clubRevenueDisplay.textContent = `Club de football : ${revenuClubParSeconde} par seconde`;
+        clubRevenueDisplay.textContent = `Club de football : ${revenuClubParSeconde.toLocaleString('fr-FR')} € par seconde`;
     }
 }
 
@@ -290,7 +289,7 @@ usineUpgradeBtn.addEventListener('click', function() {
         argent -= coutAmeliorationUsine;
         revenuUsineParSeconde *= 2;
         coutAmeliorationUsine *= 2;
-        document.getElementById('usineUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationUsine + " €)"
+        document.getElementById('usineUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationUsine.toLocaleString('fr-FR') + " €)"
         updateDisplay();
     } else {
         alert("Vous n'avez pas assez d'argent pour améliorer");
@@ -316,7 +315,7 @@ centreUpgradeBtn.addEventListener('click', function() {
         argent -= coutAmeliorationCentre;
         revenuCentreParSeconde *= 2;
         coutAmeliorationCentre *= 2;
-        document.getElementById('centreUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationCentre + " €)"
+        document.getElementById('centreUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationCentre.toLocaleString('fr-FR') + " €)"
         updateDisplay();
     } else {
         alert("Vous n'avez pas assez d'argent pour améliorer");
@@ -342,7 +341,7 @@ clubUpgradeBtn.addEventListener('click', function() {
         argent -= coutAmeliorationClub;
         revenuClubParSeconde *= 2;
         coutAmeliorationClub *= 2;
-        document.getElementById('clubUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationClub + " €)"
+        document.getElementById('clubUpgrade').textContent = "Améliorer (Coût : " + coutAmeliorationClub.toLocaleString('fr-FR') + " €)"
         updateDisplay();
     } else {
         alert("Vous n'avez pas assez d'argent pour améliorer");
