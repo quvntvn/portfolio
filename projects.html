@@ -5,60 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quentin Bucher Portfolio</title>
-    <link rel="stylesheet" media="screen" href="css/style.css"></head>
-    <body>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html?skipLoading=true">CV</a></li>
-                <li><a href="projects.html?skipLoading=true">Projets</a></li>
-                <li><a href="hobbies.html?skipLoading=true">Passer le temps</a></li>
-                <li><a href="contact.html?skipLoading=true">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="content-wrapper">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html?skipLoading=true">CV</a></li>
+            <li><a href="projects.html?skipLoading=true">Projets</a></li>
+            <li><a href="hobbies.html?skipLoading=true">Passer le temps</a></li>
+            <li><a href="contact.html?skipLoading=true">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
         <header>
             <div class="section-title">
-            <h1>Projets</h1>
+                <h1>Projets</h1>
             </div>
+            <p>Quelques projets que j'ai réalisés sur mon temps libre.</p>
         </header>
         <section>
             <div class="section-title">
                 <h2>Citation du Jour</h2>
             </div>
-            <p><strong>Citation du Jour</strong> est une application mobile que j'ai développée pour offrir aux utilisateurs une nouvelle citation inspirante chaque jour. L'application s'appuie sur une base de données personnalisée et une API hébergée sur Heroku pour récupérer les citations.</p>
-            <p>Cette application est un excellent exemple de mon travail avec les technologies suivantes :</p>
+            <p><strong>Citation du Jour</strong> est une application mobile que j'ai développée pour offrir aux utilisateurs une citation chaque jour. L'application s'appuie sur une base de données personnalisée et une API hébergée sur Heroku pour récupérer les citations.</p>
+            <p>Voici quelques captures d'écran de l'application :</p>
+            <!-- Remplacez 'path_to_your_image' par le chemin vers vos images -->
+            <img src="path_to_your_image1.jpg" alt="Capture d'écran 1" style="width:100%;max-width:300px;">
+            <img src="path_to_your_image2.jpg" alt="Capture d'écran 2" style="width:100%;max-width:300px;">
+            <p>Tester les requêtes API :</p>
+            <button onclick="fetchQuote('random')">Citation aléatoire</button>
+            <button onclick="fetchQuote('daily')">Citation du jour</button>
+            <div id="loadingIndicator" style="display: none;">Chargement...</div>
+            <pre id="apiResult"></pre>
+            <p>Liens :</p>
             <ul>
-                <li>Swift pour le développement iOS</li>
-                <li>Node.js et Express pour l'API back-end</li>
-                <li>Base de données MongoDB pour stocker les citations</li>
-                <li>Heroku pour l'hébergement de l'API</li>
+                <li><a href="https://quvntvn-qotd-api.netlify.app/swagger/index.html" target="_blank">Documentation API</a></li>
+                <li><a href="https://quvntvn-qotd-website.netlify.app/" target="_blank">Site Web de l'application</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.quvntvndevapp.qotd_android&pli" target="_blank">Application sur Google Play</a></li>
             </ul>
-            <p>Vous pouvez télécharger l'application depuis l'<a href="lien_vers_l_app_store" target="_blank">App Store</a> et explorer le code source et plus de détails sur <a href="lien_vers_le_projet_github" target="_blank">GitHub</a>.</p>
         </section>
-        <section>
-            <div class="section-title">
-            <h2>Projet 2</h2>
-            </div>
-            <p>Un autre projet que j'ai réalisé</p>
-        </section>
-        <section>
-            <div class="section-title">
-            <h2>Projet 3</h2>
-            </div>
-            <p>Un autre projet que j'ai réalisé</p>
-        </section>
-        <section>
-            <div class="section-title">
-            <h2>Projet 4</h2>
-            </div>
-            <p>Un autre projet que j'ai réalisé</p>
-        </section>
+    </div>
+    <footer>
+        <div class="cv-download">
+            <a href="Quentin_Bucher_CV.pdf" download="Quentin_Bucher_CV" class="download-button">Télécharger mon CV</a>
         </div>
-            <footer>
-                <div class="cv-download">
-                    <a href="Quentin_Bucher_CV.pdf" download="Quentin_Bucher_CV" class="download-button">Télécharger mon CV</a>
-                </div>
-                <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
-            </footer>
-    </body>
+        <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
+    </footer>
+    <script>
+function fetchQuote(type) {
+    const baseUrl = 'https://qotd-api.herokuapp.com/api/';
+    const url = `${baseUrl}${type === 'random' ? 'random_quote' : 'daily_quote'}`;
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const apiResult = document.getElementById('apiResult');
+
+    // Afficher l'indicateur de chargement
+    loadingIndicator.style.display = 'block';
+    apiResult.textContent = ''; // Nettoyer le résultat précédent
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Cacher l'indicateur de chargement
+            loadingIndicator.style.display = 'none';
+            apiResult.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            loadingIndicator.style.display = 'none';
+            apiResult.textContent = 'Erreur lors de la récupération de la citation.';
+        });
+}
+
+    </script>
+</body>
 </html>
