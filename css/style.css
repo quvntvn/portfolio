@@ -242,8 +242,8 @@ button[type="submit"] {
 }
 
 .profile-photo img {
-    width: 300px; /* Ajustez la taille selon vos besoins */
-    height: 300px; /* Assure que l'image est un cercle parfait */
+    width: 200px; /* Ajustez la taille selon vos besoins */
+    height: 200px; /* Assure que l'image est un cercle parfait */
     border-radius: 50%; /* Rend l'image ronde */
     border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
     object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
