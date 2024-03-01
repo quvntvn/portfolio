@@ -339,3 +339,15 @@ button:hover {
     margin-top: 10px;
     text-align: center;
 }
+
+.screen-image {
+    text-align: center; /* Centre l'image horizontalement */
+    margin: 20px 0; /* Ajoute de l'espace autour de l'image */
+}
+
+.screen-image img {
+    width: 300px; /* Ajustez la taille selon vos besoins */
+    border-radius: 10px; /* Rend l'image ronde */
+    border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
+    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+}
