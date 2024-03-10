@@ -18,11 +18,14 @@
     </nav>
     <div class="content-wrapper">
         <header>
+            <div class="fade-in">
             <div class="section-title">
                 <h1>PROJETS</h1>
             </div>
             <p>Quelques projets que j'ai réalisé sur mon temps libre.</p>
+        </div>
         </header>
+        <div class="fade-in">
         <section>
             <div class="section-title">
                 <h2>CITATION DU JOUR</h2>
@@ -45,12 +48,15 @@
                 <li><a href="https://play.google.com/store/apps/details?id=com.quvntvndevapp.qotd_android&pli" target="_blank">Application sur Google Play</a></li>
             </ul>
         </section>
+    </div>
+    <div class="fade-in">
         <section>
             <div class="section-title">
                 <h2>PROJET À VENIR</h2>
             </div>
             <p>Plusieurs projets en cours apparaîtront bientôt ici.</p>
         </section>
+    </div>
     </div>
     <footer>
         <div class="cv-download">
@@ -59,6 +65,22 @@
         <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
     </footer>
     <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((item) => {
+        observer.observe(item);
+    });
+});
+
 function fetchQuote(type) {
     const baseUrl = 'https://qotd-api.herokuapp.com/api/';
     const url = `${baseUrl}${type === 'random' ? 'random_quote' : 'daily_quote'}`;

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quentin Bucher Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="css/style.css">
 </head>
     <body>
@@ -22,7 +21,7 @@
         </nav>
         <div class="content-wrapper">
             <div id="main-content" style="display:none;">
-                <div data-aos="fade-up">
+                <div class="fade-in">
                 <header>
                     <div class="profile-photo">
                         <img src="assets/images/quentin.jpg" alt="Photo de profile">
@@ -37,7 +36,8 @@
                     
                 </header>
             </div>
-            <div data-aos="fade-right">                <section>
+                <div class="fade-in">
+                <section>
                     <div class="section-title">
                         <h2>À PROPOS DE MOI</h2>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                 </section>  
             </div>   
-            <div data-aos="fade-left">
+            <div class="fade-in">         
                 <section id="experiences">
                     <div class="section-title">
                     <h2>EXPERIENCES PROFESSIONNELLES</h2>
@@ -126,7 +126,7 @@
                     </div>
                 </section>
             </div>  
-            <div data-aos="fade-down">
+            <div class="fade-in">
                 <section id="formation">
                     <div class="section-title">
                     <h2>DIPLÔMES & FORMATIONS</h2>
@@ -183,7 +183,7 @@
                     </div>
                 </section>
             </div>
-            <div data-aos="fade-up-right">
+            <div class="fade-in">
                     <section>
                         <div class="section-title">
                         <h2>LANGAGES INFORMATIQUES ÉTUDIÉS</h2>
@@ -191,7 +191,7 @@
                         <p>HTML5, PHP, CSS, C#, C++, C,  SQL Serveur, Python, Java, JavaScript, Kotlin, Swift, NodeJs, Flutter, Kotlin</p>
                     </section>
                     </div>
-                    <div data-aos="fade-up-left">
+                    <div class="fade-in">
                     <section>
                         <div class="section-title">
                         <h2>LANGUES</h2>
@@ -201,7 +201,7 @@
                             Anglais : Niveau B2</p>
                         </section>
                     </div>
-<div data-aos="fade-down-right">
+                    <div class="fade-in">
                         <section>
                             <div class="section-title">
                             <h2>CENTRES D’INTÉRÊT</h2>
@@ -263,6 +263,7 @@
                         });
                     });
                 });
+                
                 </script>
                     
                     <footer>
@@ -271,15 +272,6 @@
                         </div>
                         <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
                     </footer>
-                    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-                    <script>
-                        AOS.init({
-                            duration: 800, // durée des animations en millisecondes
-                            easing: 'ease-in-out-quart', // type d'animation
-                            offset: 50, // déclenchement des animations en pixels
-                            once: true, // animation seulement une fois par élément
-                            mirror: false, // ne pas animer les éléments hors de vue lors du défilement
-                        });
-                    </script>            
-                    </body>
+                    
+            </body>
             </html>

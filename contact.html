@@ -19,18 +19,26 @@
     </nav>
     <div class="content-wrapper">
         <header>
+            <div class="fade-in">
             <div class="section-title">
             <h1>CONTACT</h1>
         </div>
+            </div>
         </header>
+        <div class="fade-in">
         <section>
             <p>Email : <a href="mailto:quentin.bucher.pro@gmail.com">quentin.bucher.pro@gmail.com</a></p>
             <h2>LinkedIn</h2>
             <p><a href="https://www.linkedin.com/in/quentin-bucher/">Visitez mon profil LinkedIn</a></p>
         </section>
+    </div>
+    <div class="fade-in">
         <section>
             <p>N'hésitez pas à me contacter pour tout projet de développement. Je serais ravi de contribuer à sa réalisation.</p>
         </section>
+    </div>
+
+    <div class="fade-in">
     <section>
         <div class="section-title">
         <h2>FORMULAIRE DE CONTACT</h2>
@@ -51,6 +59,7 @@
                 <button type="submit" class="download-cv">Envoyer</button>
             </form>
         </section>
+    </div>
 
 
 
@@ -62,6 +71,23 @@
         <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
     </footer>
     <script>
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((item) => {
+        observer.observe(item);
+    });
+});
+
         document.getElementById('contact-form').addEventListener('submit', function(event) {
           event.preventDefault();
           const form = this;

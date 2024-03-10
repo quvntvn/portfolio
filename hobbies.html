@@ -19,14 +19,19 @@
     </nav>
     <div class="content-wrapper">
         <header>
+            <div class="fade-in">
             <div class="section-title">
             <h1>MINI-JEUX</h1>
         </div>
+            </div>
         </header>
+        <div class="fade-in">
         <section>
             <div class="section-title">
             <h2>DEVINEZ LE NOMBRE ENTRE 1 ET 100</h2>
         </div>
+    </div>
+    <div class="fade-in">
             <section id="fun-time">
                 <div id="guessing-game">
                     <input type="number" id="user-guess" min="1" max="100"/>
@@ -36,6 +41,9 @@
                     <p id="game-result"></p>
                 </div>
             </section>
+        </div>
+        <div class="fade-in">
+        <section>
             <div class="section-title">
             <h2>DUEL DE COWBOYS</h2>
         </div>
@@ -52,6 +60,8 @@
             <center><button id="startDuel">Commencer le duel</button></center>
         </div>
         </section>
+    </div>
+    <div class="fade-in">
         <section id="clicker-game">
             <div class="section-title">
                 <h2>Jeu d'incrémentation</h2>
@@ -93,7 +103,27 @@
                 </div>
             </div>
         </section>
+    </div>
         <script src="js/game.js"></script>
+        <script>
+            
+            document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((item) => {
+        observer.observe(item);
+    });
+});
+
+        </script>
     </div>
     <footer>
         <div class="cv-download">
