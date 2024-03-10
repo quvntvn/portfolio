@@ -36,7 +36,8 @@
             <button onclick="fetchQuote('random')">Citation aléatoire</button>
             <button onclick="fetchQuote('daily')">Citation du jour</button>
             <div id="loadingIndicator" style="display: none;">Chargement...</div>
-            <pre id="apiResult"></pre>
+            <pre id="apiResult" class="apiDisplay"></pre>
+            <button onclick="masquer()" class="hideButton" id="hide">Masquer</button>
             <p>Liens :</p>
             <ul>
                 <li><a href="https://quvntvn-qotd-api.netlify.app/swagger/index.html" target="_blank">Documentation API</a></li>
@@ -73,6 +74,7 @@ function fetchQuote(type) {
         .then(data => {
             // Cacher l'indicateur de chargement
             loadingIndicator.style.display = 'none';
+            apiResult.style.display = 'block'; // Ajoutez cette ligne pour afficher le résultat
             apiResult.textContent = JSON.stringify(data, null, 2);
         })
         .catch(error => {
@@ -80,6 +82,12 @@ function fetchQuote(type) {
             loadingIndicator.style.display = 'none';
             apiResult.textContent = 'Erreur lors de la récupération de la citation.';
         });
+        document.getElementById('hide').style.display = 'block';
+}
+
+function masquer() {
+    document.getElementById('apiResult').style.display = 'none';
+    document.getElementById('hide').style.display = 'none';
 }
 
     </script>

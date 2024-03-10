@@ -351,3 +351,18 @@ button:hover {
     border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
     object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
 }
+
+.apiDisplay {
+    display: none; /* Initial state hidden */
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #1a1a1a; /* Slightly different background */
+    border-left: 3px solid #33ff33; /* Add a styled border to the left */
+    color: #c7c7c7; /* Lighter text color for readability */
+    font-size: 0.95em; /* Slightly smaller font size */
+    margin: 10px 0; /* Add some space between paragraphs */
+}
+
+.hideButton {
+    display: none;
+}
