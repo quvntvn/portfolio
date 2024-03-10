@@ -121,6 +121,21 @@ footer {
     .content-wrapper {
         padding: 10px; /* Réduit le padding pour les petits écrans */
     }
+    /* Pour les écrans plus petits que 768px */
+    body, p, a, button, input, textarea {
+        font-size: 13px; /* Ajustez cette valeur selon vos préférences */
+    }
+
+    h1 {
+        font-size: 26px; /* Taille de police plus petite pour les h1 */
+    }
+
+    h2 {
+        font-size: 18px; /* Taille de police plus petite pour les h2 */
+    }
+
+    /* Vous pouvez continuer à ajuster d'autres éléments ici */
+
 }
 
 @media (max-width: 480px) {
