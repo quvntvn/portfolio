@@ -143,9 +143,6 @@ footer {
         padding: 5px; /* Espacement encore plus réduit pour les très petits écrans */
     }
     /* Vous pouvez également ajuster d'autres éléments ici */
-    h1, h2 {
-        font-size: smaller; /* Réduit la taille du texte pour les titres */
-    }
 }
 
 .experience-detail {
