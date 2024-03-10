@@ -38,9 +38,12 @@
             <p>Tester les requêtes API :</p>
             <button onclick="fetchQuote('random')">Citation aléatoire</button>
             <button onclick="fetchQuote('daily')">Citation du jour</button>
-            <div id="loadingIndicator" style="display: none;">Chargement...</div>
+            <div id="loadingIndicator" style="display: none;"><br>Chargement...<br><br></div>
             <pre id="apiResult" class="apiDisplay"></pre>
             <button onclick="masquer()" class="hideButton" id="hide">Masquer</button>
+
+
+
             <p>Liens :</p>
             <ul>
                 <li><a href="https://quvntvn-qotd-api.netlify.app/swagger/index.html" target="_blank">Documentation API</a></li>
@@ -82,6 +85,7 @@
 });
 
 function fetchQuote(type) {
+    masquer();
     const baseUrl = 'https://qotd-api.herokuapp.com/api/';
     const url = `${baseUrl}${type === 'random' ? 'random_quote' : 'daily_quote'}`;
     const loadingIndicator = document.getElementById('loadingIndicator');

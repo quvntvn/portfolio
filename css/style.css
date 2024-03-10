@@ -346,10 +346,15 @@ button:hover {
 }
 
 #loadingIndicator {
-    color: limegreen;
+    text-align: center;
+    display: none; /* Initial state hidden */
     padding: 10px;
     margin-top: 10px;
-    text-align: center;
+    background-color: #1a1a1a; /* Slightly different background */
+    border-left: 3px solid #33ff33; /* Add a styled border to the left */
+    color: #c7c7c7; /* Lighter text color for readability */
+    font-size: 0.95em; /* Slightly smaller font size */
+    margin: 10px 0; /* Add some space between paragraphs */
 }
 
 .screen-image {
