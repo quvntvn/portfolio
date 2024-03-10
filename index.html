@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quentin Bucher Portfolio</title>
-    <link rel="stylesheet" media="screen" href="css/style.css"></head>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
     <body>
         <div id="loading-screen">
             <div id="terminal"></div>
@@ -20,6 +22,7 @@
         </nav>
         <div class="content-wrapper">
             <div id="main-content" style="display:none;">
+                <div data-aos="fade-up">
                 <header>
                     <div class="profile-photo">
                         <img src="assets/images/quentin.jpg" alt="Photo de profile">
@@ -33,14 +36,17 @@
                     </div>
                     
                 </header>
-                <section>
+            </div>
+            <div data-aos="fade-right">                <section>
                     <div class="section-title">
                         <h2>À PROPOS DE MOI</h2>
                     </div>
                     <div class="content-section">
                         &emsp;&emsp;&emsp;&emsp;&emsp;En fin de formation en développement web et mobile à l'Institut F2I, je suis passionné par le développement d'applications mobiles tout en restant ouvert à d'autres domaines du développement informatique. Actuellement à la recherche d'un poste en région parisienne, je suis prêt à m'engager dans de nouveaux projets innovants pour débuter ma carrière professionnelle.
                     </div>
-                </section>                
+                </section>  
+            </div>   
+            <div data-aos="fade-left">
                 <section id="experiences">
                     <div class="section-title">
                     <h2>EXPERIENCES PROFESSIONNELLES</h2>
@@ -119,6 +125,8 @@
                         </div>
                     </div>
                 </section>
+            </div>  
+            <div data-aos="fade-down">
                 <section id="formation">
                     <div class="section-title">
                     <h2>DIPLÔMES & FORMATIONS</h2>
@@ -174,12 +182,16 @@
                         Collège Jules Verne – Villebon sur Yvette
                     </div>
                 </section>
+            </div>
+            <div data-aos="fade-up-right">
                     <section>
                         <div class="section-title">
                         <h2>LANGAGES INFORMATIQUES ÉTUDIÉS</h2>
                     </div>
                         <p>HTML5, PHP, CSS, C#, C++, C,  SQL Serveur, Python, Java, JavaScript, Kotlin, Swift, NodeJs, Flutter, Kotlin</p>
                     </section>
+                    </div>
+                    <div data-aos="fade-up-left">
                     <section>
                         <div class="section-title">
                         <h2>LANGUES</h2>
@@ -188,6 +200,8 @@
                             
                             Anglais : Niveau B2</p>
                         </section>
+                    </div>
+<div data-aos="fade-down-right">
                         <section>
                             <div class="section-title">
                             <h2>CENTRES D’INTÉRÊT</h2>
@@ -202,9 +216,30 @@
                             </p>
                         </section>
                     </div>
+                    </div>
+                
                 </div>
+
                 <script src="./js/script.js"></script>
-                <script>document.addEventListener('DOMContentLoaded', function() {
+                <script>
+                document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((item) => {
+        observer.observe(item);
+    });
+});
+
+                
+                document.addEventListener('DOMContentLoaded', function() {
                     document.querySelectorAll('.experience-detail, .formation-detail').forEach(detail => {
                         detail.style.display = 'none';
                     });
@@ -228,7 +263,6 @@
                         });
                     });
                 });
-                
                 </script>
                     
                     <footer>
@@ -237,6 +271,15 @@
                         </div>
                         <p>quentin.bucher.pro@gmail.com<br>Langages utilisés pour ce site : HTML, CSS, JavaScript</p>
                     </footer>
-                    
-            </body>
+                    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+                    <script>
+                        AOS.init({
+                            duration: 800, // durée des animations en millisecondes
+                            easing: 'ease-in-out-quart', // type d'animation
+                            offset: 50, // déclenchement des animations en pixels
+                            once: true, // animation seulement une fois par élément
+                            mirror: false, // ne pas animer les éléments hors de vue lors du défilement
+                        });
+                    </script>            
+                    </body>
             </html>
