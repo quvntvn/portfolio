@@ -52,8 +52,7 @@
                     <label for="message">Message :</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
-                <!-- Champ de redirection optionnel -->
-                <input type="hidden" name="_next" value="merci.html">
+                <input type="hidden" name="_next" value="https://quvntvn.netlify.app/">
                 <button type="submit" class="download-cv">Envoyer</button>
             </form>
         </section>
@@ -83,7 +82,11 @@
         observer.observe(item);
     });
 });
-
+window.onbeforeunload = () => {
+  for(const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+}
         </script>
 </body>
 </html>
