@@ -104,6 +104,31 @@
             </div>
         </section>
     </div>
+    <div class="fade-in">
+        <section id="metabolism">
+            <div class="section-title">
+                <h2>Calculateur de métabolisme basal</h2>
+            </div>
+            <div class="game-container">
+                <p>Entrez vos informations pour calculer votre métabolisme basal :</p>
+                <div>
+                    <input type="radio" id="homme" name="homme" value="homme" checked />
+                    <label for="homme">Homme</label>
+                  </div>
+                    <div>
+                        <input type="radio" id="femme" name="homme" value="femme" />
+                        <label for="femme">Femme</label>
+                    </div>
+                <input type="number" id="weight" placeholder="Poids (kg)"/>
+                <input type="number" id="height" placeholder="Taille (cm)"/>
+                <input type="number" id="age" placeholder="Âge"/>
+                <button id="calculate" onclick="grosPorc()">Calculer</button>
+                </br>
+                </br>
+                <div id="result"></div>
+            </div>
+        </section>
+    </div>
         <script src="js/game.js"></script>
         <script>
             
@@ -122,6 +147,31 @@
         observer.observe(item);
     });
 });
+
+//grosporc calcul
+
+function grosPorc() {
+    const homme = document.getElementById('homme').checked;
+    const femme = document.getElementById('femme').checked;
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const age = document.getElementById('age').value;
+    const result = document.getElementById('result');
+
+    if(weight === '' || height === '' || age === '') {
+        result.textContent = 'Veuillez remplir tous les champs';
+        return;
+    } else if (weight <= 0 || height <= 0 || age <= 0) {
+        result.textContent = 'Veuillez entrer des valeurs valides';
+        return;
+    } else {
+
+    if (homme) {
+        result.textContent = Math.round(66.5 + (13.75 * weight) + (5.003 * height) - (6.755 * age)) + ' kcal';
+    } else if (femme) {
+        result.textContent = Math.round(655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age)) + ' kcal';
+    }}
+}
 
         </script>
     </div>
