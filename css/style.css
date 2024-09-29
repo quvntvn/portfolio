@@ -364,7 +364,7 @@ button:hover {
 }
 
 .screen-image-landscape img {
-    width: 600px;
+    width: 65%;
     border-radius: 10px;
     border: 1px solid #33ff33;
     object-fit: cover;
