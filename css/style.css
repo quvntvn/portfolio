@@ -1,4 +1,3 @@
-/* style.css */
 body {
     font-family: 'Terminal', monospace;
     background-color: #0a0a0a;
@@ -36,7 +35,6 @@ a {
 footer {
     text-align: center;
     border-top: 1px solid #33ff33;
-    /*position: fixed;*/
     bottom: 0;
     background-color: #000000; 
     color: #33ff33;
@@ -70,12 +68,12 @@ footer {
     animation: blink 1s step-end infinite;
   }
 
-/* Style des liens */.navbar {
-    background-color: #333; /* Couleur de fond */
+.navbar {
+    background-color: #333;
     overflow: hidden;
-    display: flex; /* Utilisez flex pour mieux contrôler le positionnement des liens */
-    justify-content: center; /* Alignez les liens à partir de la gauche */
-    width: 100%; /* Assurez-vous que la barre de navigation couvre toute la largeur */
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .nav-links {
@@ -87,62 +85,57 @@ footer {
 
 
 .nav-links li {
-    display: flex; /* Assure que les éléments de liste sont aussi en flex */
+    display: flex;
 }
 
 .nav-links a {
-    display: block; /* Affichage en bloc */
-    color: white; /* Couleur du texte */
-    text-align: center; /* Alignement du texte */
-    padding: 14px 16px; /* Espacement */
-    text-decoration: none; /* Pas de soulignement */
-    font-size: 17px; /* Taille du texte */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
-/* Changement de couleur des liens au survol */
 .nav-links a:hover {
-    background-color: #ddd; /* Couleur de fond au survol */
-    color: black; /* Couleur du texte au survol */
+    background-color: #ddd;
+    color: black;
 }
 
-/* Style des liens actifs (si nécessaire) */
 .nav-links a.active {
-    background-color: #4CAF50; /* Couleur de fond du lien actif */
-    color: white; /* Couleur du texte du lien actif */
+    background-color: #4CAF50;
+    color: white;
 }
 
 .content-wrapper {
-    max-width: 1200px; /* Largeur maximale pour une lecture confortable */
-    margin: 0 auto; /* Centrage du conteneur */
-    padding: 20px; /* Espacement autour du contenu */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 @media (max-width: 768px) {
     .content-wrapper {
-        padding: 10px; /* Réduit le padding pour les petits écrans */
+        padding: 10px;
     }
-    /* Pour les écrans plus petits que 768px */
     body, p, a, button, input, textarea {
-        font-size: 13px; /* Ajustez cette valeur selon vos préférences */
+        font-size: 13px;
     }
 
     h1 {
-        font-size: 22px; /* Taille de police plus petite pour les h1 */
+        font-size: 22px;
     }
 
     h2 {
-        font-size: 17px; /* Taille de police plus petite pour les h2 */
+        font-size: 17px;
     }
 
-    /* Vous pouvez continuer à ajuster d'autres éléments ici */
 
 }
 
 @media (max-width: 480px) {
     .content-wrapper {
-        padding: 5px; /* Espacement encore plus réduit pour les très petits écrans */
+        padding: 5px;
     }
-    /* Vous pouvez également ajuster d'autres éléments ici */
 }
 
 .experience-detail {
@@ -156,14 +149,12 @@ footer {
 }
 
 
-/* Assurez-vous que la section ou le conteneur du titre a une classe spécifique pour ce positionnement */
 .section-title {
     border-bottom:1px solid #33ff33;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*margin-bottom: 30px;*/
 }
 
 .toggle-detail {
@@ -174,34 +165,33 @@ footer {
     cursor: pointer;
     background: none;
     border: none;
-    color: #33ff33; /* Couleur adaptée au thème */
-    /* Autres styles pour le bouton ici si nécessaire */
+    color: #33ff33;
 }
 
 .experience-detail, .formation-detail {
-    display: none; /* Initial state hidden */
+    display: none;
     padding: 10px;
     margin-top: 10px;
-    background-color: #1a1a1a; /* Slightly different background */
-    border-left: 3px solid #33ff33; /* Add a styled border to the left */
-    color: #c7c7c7; /* Lighter text color for readability */
-    font-size: 0.95em; /* Slightly smaller font size */
+    background-color: #1a1a1a;
+    border-left: 3px solid #33ff33;
+    color: #c7c7c7;
+    font-size: 0.95em;
 }
 
 .experience-detail p, .formation-detail p {
-    margin: 10px 0; /* Add some space between paragraphs */
+    margin: 10px 0;
 }
 
 .section-title, .content-section {
-    padding: 10px; /* Ajustez cette valeur selon vos besoins */
-    margin: 20px 0; /* Ajustez cette valeur selon vos besoins */
+    padding: 10px;
+    margin: 20px 0;
 }
 
 .download-cv {
     display: inline-block;
-    background-color: transparent; /* Fond transparent pour s'intégrer au style */
-    color: #33ff33; /* Couleur du texte */
-    border: 2px solid #33ff33; /* Bordure du bouton */
+    background-color: transparent;
+    color: #33ff33;
+    border: 2px solid #33ff33;
     padding: 10px 20px;
     margin: 20px 0;
     text-decoration: none;
@@ -211,8 +201,8 @@ footer {
 }
 
 .download-cv:hover {
-    background-color: #33ff33; /* Changement de fond au survol */
-    color: #0a0a0a; /* Changement de couleur du texte au survol */
+    background-color: #33ff33;
+    color: #0a0a0a;
 }
 
 form#contact-form {
@@ -249,25 +239,24 @@ button[type="submit"] {
 }
 
 .profile-photo {
-    text-align: center; /* Centre l'image horizontalement */
-    margin: 20px 0; /* Ajoute de l'espace autour de l'image */
+    text-align: center;
+    margin: 20px 0;
 }
 
 .profile-photo img {
-    width: 200px; /* Ajustez la taille selon vos besoins */
-    height: 200px; /* Assure que l'image est un cercle parfait */
-    border-radius: 50%; /* Rend l'image ronde */
-    border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
-    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #33ff33;
+    object-fit: cover;
 }
 
-/* Style général du jeu et des éléments de formulaire */
 input[type="number"], button {
-    color: #33ff33; /* Texte vert */
-    border: 1px solid #33ff33; /* Bordure verte */
-    padding: 10px; /* Espacement intérieur */
-    font-family: 'Terminal', monospace; /* Police de caractères */
-    margin: 5px 0; /* Espacement extérieur */
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    padding: 10px;
+    font-family: 'Terminal', monospace;
+    margin: 5px 0;
 }
 
 input[type="number"]{
@@ -275,14 +264,14 @@ input[type="number"]{
 }
 
 button {
-    cursor: pointer; /* Curseur pointeur */
+    cursor: pointer;
     background-color: #0a0a0a;
-    transition: background-color 0.3s, color 0.3s; /* Transition douce */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-    background-color: #33ff33; /* Fond vert sur hover */
-    color: #0a0a0a; /* Texte noir sur hover */
+    background-color: #33ff33;
+    color: #0a0a0a;
 }
 
 .cv-download a.download-button {
@@ -301,7 +290,7 @@ button:hover {
 }
 
 #retry-button {
-    display: none; /* Cache le bouton par défaut */
+    display: none;
 }
 
 .game-container {
@@ -347,37 +336,37 @@ button:hover {
 
 #loadingIndicator {
     text-align: center;
-    display: none; /* Initial state hidden */
+    display: none;
     padding: 10px;
     margin-top: 10px;
-    background-color: #1a1a1a; /* Slightly different background */
-    border-left: 3px solid #33ff33; /* Add a styled border to the left */
-    color: #c7c7c7; /* Lighter text color for readability */
-    font-size: 0.95em; /* Slightly smaller font size */
-    margin: 10px 0; /* Add some space between paragraphs */
+    background-color: #1a1a1a;
+    border-left: 3px solid #33ff33;
+    color: #c7c7c7;
+    font-size: 0.95em;
+    margin: 10px 0;
 }
 
 .screen-image {
-    text-align: center; /* Centre l'image horizontalement */
-    margin: 20px 0; /* Ajoute de l'espace autour de l'image */
+    text-align: center;
+    margin: 20px 0;
 }
 
 .screen-image img {
-    width: 200px; /* Ajustez la taille selon vos besoins */
-    border-radius: 10px; /* Rend l'image ronde */
-    border: 1px solid #33ff33; /* Ajoute une bordure de couleur */
-    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #33ff33;
+    object-fit: cover;
 }
 
 .apiDisplay {
-    display: none; /* Initial state hidden */
+    display: none;
     padding: 10px;
     margin-top: 10px;
-    background-color: #1a1a1a; /* Slightly different background */
-    border-left: 3px solid #33ff33; /* Add a styled border to the left */
-    color: #c7c7c7; /* Lighter text color for readability */
-    font-size: 0.95em; /* Slightly smaller font size */
-    margin: 10px 0; /* Add some space between paragraphs */
+    background-color: #1a1a1a;
+    border-left: 3px solid #33ff33;
+    color: #c7c7c7;
+    font-size: 0.95em;
+    margin: 10px 0;
 }
 
 .hideButton {

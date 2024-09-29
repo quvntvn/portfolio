@@ -115,16 +115,14 @@ function fetchQuote(type) {
     const loadingIndicator = document.getElementById('loadingIndicator');
     const apiResult = document.getElementById('apiResult');
 
-    // Afficher l'indicateur de chargement
     loadingIndicator.style.display = 'block';
-    apiResult.textContent = ''; // Nettoyer le résultat précédent
+    apiResult.textContent = ''; 
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Cacher l'indicateur de chargement
             loadingIndicator.style.display = 'none';
-            apiResult.style.display = 'block'; // Ajoutez cette ligne pour afficher le résultat
+            apiResult.style.display = 'block'; 
             apiResult.textContent = JSON.stringify(data, null, 2);
         })
         .catch(error => {

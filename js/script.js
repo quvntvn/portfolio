@@ -66,7 +66,6 @@ function hideLoadingScreen() {
     }, 500);
 }
 
-// Corrigé pour éviter la redéfinition
 window.onload = function() {
     if (!skipLoadingAnimation()) {
         sequenceOfCommands();
