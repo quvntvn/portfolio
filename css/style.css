@@ -358,6 +358,18 @@ button:hover {
     object-fit: cover;
 }
 
+.screen-image-landscape{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.screen-image-landscape img {
+    width: 600px;
+    border-radius: 10px;
+    border: 1px solid #33ff33;
+    object-fit: cover;
+}
+
 .apiDisplay {
     display: none;
     padding: 10px;
