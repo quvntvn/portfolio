@@ -7,7 +7,7 @@ body {
     font-size: 16px;
 }
 
-header, section, footer {
+header, section {
     font-family: 'Terminal', monospace;
     margin: 20px;
     padding: 10px;
@@ -33,6 +33,8 @@ a {
 }
 
 footer {
+    padding: 10px;
+    font-family: 'Terminal', monospace;
     text-align: center;
     border-top: 1px solid #33ff33;
     bottom: 0;
