@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /merci
+
+Sitemap: https://quvntvn.netlify.app/sitemap.xml
