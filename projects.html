@@ -46,9 +46,8 @@
             <br><br>
             <p>Liens :</p>
             <ul>
-                <li><a href="https://quvntvn-qotd-api.netlify.app/swagger/index.html" target="_blank">Documentation API</a></li>
                 <li><a href="https://quvntvn-qotd-website.netlify.app/" target="_blank">Version Web</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.quvntvndevapp.qotd_android&pli" target="_blank">Application sur Google Play</a></li>
+                <li><a href="https://github.com/quvntvn/qotd_app/releases/tag/v1.0.0" target="_blank">Application sur Android</a></li>
             </ul>
         </section>
     </div>
@@ -127,7 +126,7 @@
 
 function fetchQuote(type) {
     masquer();
-    const baseUrl = 'https://qotd-api.herokuapp.com/api/';
+    const baseUrl = 'https://qotd-api-ne8l.onrender.com/api/';
     const url = `${baseUrl}${type === 'random' ? 'random_quote' : 'daily_quote'}`;
     const loadingIndicator = document.getElementById('loadingIndicator');
     const apiResult = document.getElementById('apiResult');
