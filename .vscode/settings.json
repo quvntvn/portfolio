@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "postgres.railway.internal",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "railway",
+            "username": "postgres",
+            "password": "lbQqsTiAkidUoZImNhJMcBTDhPuvTQDq",
+            "name": "railway"
+        }
+    ]
+}
