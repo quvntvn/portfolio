@@ -22,7 +22,7 @@
             <div class="section-title">
                 <h1>PROJETS</h1>
             </div>
-            <p>Quelques projets que j'ai réalisé sur mon temps libre.</p>
+            <p>Quelques projets que j'ai réalisés sur mon temps libre.</p>
         </div>
         </header>
 
@@ -48,9 +48,31 @@
             <div class="fade-in">
                 <section>
                     <div class="section-title">
+                        <h2>Klaxon</h2>
+                    </div>
+                    <p><strong>Klaxon</strong> transforme les révisions du code de la route en jeu, à la manière de Duolingo. L'application propose 300 questions couvrant les 10 thèmes officiels de l'examen, chacune accompagnée d'une explication pour comprendre la règle plutôt que l'apprendre par cœur.</p>
+                    <p>On avance sur un parcours à débloquer, avec des points d'expérience, des niveaux, des vies et une série de jours à entretenir. Un examen blanc reproduit les conditions de l'épreuve : 40 questions, chronomètre et seuil officiel de réussite.</p>
+                    <p>Application Android en Kotlin et Jetpack Compose (MVVM, Hilt, Room). La banque de questions est versionnée en JSON, importée dans une base locale et vérifiée par des tests automatisés. Entièrement hors ligne : sans compte, sans publicité, sans aucune donnée collectée.</p>
+
+                    <div class="screen-image-landscape">
+                        <img src="/assets/images/klaxon.png" alt="Capture d'écran de l'application Klaxon">
+                    </div>
+                    <br><br>
+                    <p>Liens :</p>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.quvntvn.klaxon" target="_blank">Application sur Android</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="fade-in">
+                <section>
+                    <div class="section-title">
                         <h2>À l'eau !</h2>
                     </div>
-                    <p><strong>À l'eau !</strong> description en construction ...</p>
+                    <p><strong>À l'eau !</strong> guide la douche étape par étape avec un minuteur, sur le téléphone comme sur une montre connectée. Vous choisissez ce que vous lavez (corps, cheveux, après-shampooing, visage, zone intime, finition à l'eau froide) et votre rythme (Express, Normal ou Tranquille) : l'application construit le programme et enchaîne les étapes, avec un son et une vibration à chaque transition et un cadran qui se remplit d'eau au fil du temps.</p>
+                    <p>Sur la montre Wear OS, la séance fonctionne sans le téléphone et reste affichée en permanence. Sur le téléphone, le compte à rebours reste visible en notification, même écran verrouillé. En fin de séance, l'application estime l'eau économisée par rapport à une douche moyenne.</p>
+                    <p>Application Android et Wear OS en Kotlin, avec Jetpack Compose sur le téléphone et Compose for Wear OS sur la montre. La logique (génération des programmes, minuteur) est isolée dans un module Kotlin pur partagé par les deux applications et couvert par des tests unitaires. Sans compte, sans publicité, sans aucune donnée collectée.</p>
 
                     <div class="screen-image-landscape">
                         <img src="/assets/images/aleau.png" alt="Capture d'écran de l'application à l'eau">
@@ -68,7 +90,9 @@
                     <div class="section-title">
                         <h2>Vertige Protocol</h2>
                     </div>
-                    <p><strong>Vertige Protocol</strong> description en construction ...</p>
+                    <p><strong>Vertige Protocol</strong> est un jeu de chute libre à l'esthétique rétro-futuriste mid-century. Vous tombez entre deux tours sans fin et glissez le doigt pour esquiver les obstacles : une seule vie, et la moindre collision met fin à la partie.</p>
+                    <p>Quatre modes de jeu : Classique pour battre son record, Jetpack où la gravité s'inverse, Tournoi pour s'affronter à plusieurs sur le même téléphone, et Histoire, une campagne de 40 chapitres, chacun avec son niveau et son récit, qui révèle peu à peu pourquoi vous tombez… et qui vous fait tomber. Cosmétiques à débloquer et défis complètent la progression.</p>
+                    <p>Jeu développé avec le moteur Godot, avec une animation procédurale du personnage en chute libre. Entièrement hors ligne : sans compte, sans publicité, sans aucune donnée collectée.</p>
 
                     <div class="screen-image-landscape">
                         <img src="/assets/images/vertigeprotocol.png" alt="Capture d'écran de l'application vertige protocol">
@@ -87,6 +111,8 @@
                         <h2>Car Locator</h2>
                     </div>
                     <p><strong>Car Locator</strong> détecte automatiquement la déconnexion Bluetooth avec votre voiture, enregistre votre emplacement de stationnement sans que vous n’ayez rien à faire, et vous guide pour retrouver votre voiture plus tard.</p>
+                    <p>Sans Bluetooth, le bouton « Garer ici » enregistre la place en un geste, et « Y aller » ouvre votre application GPS préférée (Google Maps, Waze…) pour revenir jusqu'à la voiture. Le « Garage » permet d'enregistrer plusieurs véhicules, chacun avec son nom et son appareil Bluetooth.</p>
+                    <p>Application Android en Kotlin, avec détection Bluetooth en arrière-plan et carte Google Maps. La position reste sur le téléphone : rien n'est envoyé ni partagé.</p>
 
                     <div class="screen-image-landscape">
                         <img src="/assets/images/carlocator.png" alt="Capture d'écran de l'application car locator">
@@ -95,6 +121,7 @@
                     <p>Liens :</p>
                     <ul>
                         <li><a href="https://play.google.com/store/apps/details?id=com.quvntvn.carlocator" target="_blank">Application sur Android</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=6BV9UEKm4TE" target="_blank">Bande-annonce</a></li>
                     </ul>
                 </section>
             </div>
@@ -104,7 +131,8 @@
                 <div class="section-title">
                     <h2>Citation Du Jour</h2>
                 </div>
-                <p><strong>Citation du Jour</strong> est une application mobile que j'ai développée pour offrir aux utilisateurs une citation chaque jour. L'application s'appuie sur une base de données personnalisée et une API hébergée sur Render pour récupérer les citations.</p>
+                <p><strong>Citation du Jour</strong> propose chaque jour une nouvelle citation d'auteurs et de penseurs (philosophie, littérature, science, art…), ainsi qu'une citation aléatoire à la demande. Le recueil couvre deux ans sans répétition, la notification quotidienne arrive à l'heure de votre choix, et chaque citation se partage en un geste sous forme d'image, prête pour Instagram ou WhatsApp. L'application compte plus de 1 000 téléchargements sur le Play Store.</p>
+                <p>L'application s'appuie sur une base de données personnalisée et une API hébergée sur Render pour récupérer les citations.</p>
 
                 <div class="screen-image-landscape">
                     <img src="/assets/images/qotd.png" alt="Capture d'écran de l'application citation du jour">
